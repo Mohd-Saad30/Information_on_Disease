@@ -6,100 +6,111 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to right, #6a11cb, #2575fc);
+    background: linear-gradient(to right, #2F80ED, #56CCF2);
     color: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #wrapper {
-    min-height: 100dvh;
     width: 100%;
+    padding: 40px 20px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 20px;
 }
 
 #div {
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
     border-radius: 20px;
-    padding: 30px;
+    padding: 40px 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 40px;
     flex-wrap: wrap;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-    max-width: 1000px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    max-width: 1200px;
     width: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 #heartAttack,
 #knee_replacement,
 #diabetes {
-    border: none;
-    height: 260px;
     width: 280px;
+    height: 300px;
+    border-radius: 20px;
+    background: #ffffff10;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    border-radius: 15px;
-    background-color: #ffffff;
-    overflow: hidden;
-    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.4s ease, box-shadow 0.3s ease;
+    border: 1.5px solid #000000; /* 👈 Black border */
+    cursor: pointer;
 }
+
 
 #heartAttack:hover,
 #knee_replacement:hover,
 #diabetes:hover {
-    transform: translateY(-10px);
-    box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.3);
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.25);
 }
 
 img {
-    height: 150px;
+    height: 160px;
     object-fit: cover;
-    border-radius: 15px 15px 0 0;
-    border-bottom: 1px solid #ddd;
+    border-radius: 20px 20px 0 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    transition: transform 0.4s ease;
+}
+
+#heartAttack:hover img,
+#knee_replacement:hover img,
+#diabetes:hover img {
+    transform: scale(1.05);
 }
 
 h4 {
+    font-size: 1.25rem;
+    padding: 10px 15px 5px;
     font-weight: bold;
-    font-size: 1.2rem;
-    padding: 0 10px;
-    color: #333;
+    color: #ffffff;
 }
 
 p {
-    padding: 0 10px 10px;
+    padding: 0 15px 15px;
     font-size: 0.95rem;
-    color: #555;
+    color: #e0e0e0;
+    line-height: 1.4;
 }
 
-/* ✅ Media Query for Mobile Screens */
-@media (max-width: 600px) {
+/* ✅ Mobile Responsiveness */
+@media (max-width: 768px) {
     #div {
         flex-direction: column;
         padding: 20px;
+        gap: 20px;
     }
 
     #heartAttack,
     #knee_replacement,
     #diabetes {
-        width: 90%;
+        width: 100%;
         height: auto;
     }
 
     img {
-        height: 180px;
-    }
-
-    h4 {
-        font-size: 1.1rem;
-    }
-
-    p {
-        font-size: 0.9rem;
+        height: 200px;
     }
 }
